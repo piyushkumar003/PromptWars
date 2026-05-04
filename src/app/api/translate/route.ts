@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     console.log(`Translating to ${targetLanguage}: ${text.substring(0, 20)}...`);
 
     const { text: translatedText } = await generateText({
-      model: google('gemini-2.0-flash'),
+      model: google('gemini-2.5-flash'),
       system: `You are a professional translator specializing in Indian languages. 
       Your task is to translate the given text into ${targetLanguage}.
       Maintain the tone and meaning perfectly. 

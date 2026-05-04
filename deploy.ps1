@@ -45,4 +45,4 @@ gcloud run deploy $SERVICE_NAME `
   --set-env-vars "DATABASE_URL=$DATABASE_URL,GOOGLE_GENERATIVE_AI_API_KEY=$API_KEY" `
   --quiet
 
-Write-Host "Deployment complete!" -ForegroundColor Green
+Write-Host "Service URL: $(gcloud run services describe $SERVICE_NAME --platform managed --region $REGION --format 'value(status.url)')" -ForegroundColor Cyan
